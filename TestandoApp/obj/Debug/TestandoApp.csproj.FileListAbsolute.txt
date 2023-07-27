@@ -94,3 +94,4 @@ E:\Testando\TestandoApp\obj\Debug\TestandoApp.csproj.CoreCompileInputs.cache
 E:\Testando\TestandoApp\obj\Debug\TestandoApp.csproj.CopyComplete
 E:\Testando\TestandoApp\obj\Debug\TestandoApp.exe
 E:\Testando\TestandoApp\obj\Debug\TestandoApp.pdb
+E:\Testando\TestandoApp\obj\Debug\TestandoApp.FrmListarUsuario.resources
