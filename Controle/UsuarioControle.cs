@@ -54,14 +54,33 @@ namespace Controle
         public bool Excluir(int codigo)
         {
             bool resultado = false;
-            MySqlConnection sqlcon = con.GetConexao();
             string sql = "delete from usuario where id=" + codigo;
+            MySqlConnection sqlcon = con.GetConexao();
             sqlcon.Open();
             MySqlCommand Command = new MySqlCommand(sql, sqlcon);
             Command.CommandType = System.Data.CommandType.Text;
             Command.CommandText = sql;
             if(Command.ExecuteNonQuery() >= 1)
                 resultado=true;
+            sqlcon.Close();
+            return resultado;
+        }
+        public bool Editar(UsuarioModelo us)
+        {
+            bool resultado =false;
+            string sql = "update usuario set nome = @nome, senha = @senha where id = @id";
+            MySqlConnection sqlcon = con.GetConexao();
+            sqlcon.Open();
+            MySqlCommand command = new MySqlCommand(sql, sqlcon);
+            command.CommandType = System.Data.CommandType.Text;
+            command.CommandText = sql;
+            //substituindo a variavel @___ pelo conteúdo do objeto
+            command.Parameters.AddWithValue("@nome", us.nome);
+            command.Parameters.AddWithValue("@senha", us.senha);
+            command.Parameters.AddWithValue("@id", us.id);
+            if(command.ExecuteNonQuery()>=1);
+            resultado=true;
+            sqlcon.Close();
             return resultado;
         }
     }

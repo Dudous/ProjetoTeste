@@ -19,6 +19,7 @@ namespace TestandoApp
         {
             InitializeComponent(); //Constroi tudo que tem no formulario
         }
+            int codigo = 0;
 
         private void btn_Cadastrar_Click(object sender, EventArgs e)
         {
@@ -61,17 +62,53 @@ namespace TestandoApp
             }
 
         }
-        private void dtUsuario_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //convertendo a primeira célula em inteiro
-            int codigo = Convert.ToInt32(dtUsuario.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
-            //converte o interiro para string
-            MessageBox.Show("Usuário selecionado: " + codigo.ToString());
-        }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            
+            UsuarioControle uscontroller = new UsuarioControle();
+            //chamo o metodo excluir do usuario controle
+            if(uscontroller.Excluir(codigo)== true)
+            {
+                MessageBox.Show("Usuário excluído");
+            }
+            else
+            {
+                MessageBox.Show("Erro ao excluir usuário");
+            }
+        }
+
+        private void dtUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //convertendo a primeira célula em inteiro
+            codigo = Convert.ToInt32(dtUsuario.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+            //converte o interiro para string
+            MessageBox.Show("Usuário selecionado: " + codigo.ToString());
+            txt_nome.Text = dtUsuario.Rows[e.RowIndex].Cells["nome"].Value.ToString();
+            txt_senha.Text = dtUsuario.Rows[e.RowIndex].Cells["senha"].Value.ToString();
+
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            //instancio o objeto usuario controle
+            UsuarioControle uscontroller = new UsuarioControle();
+            UsuarioModelo usmodelo = new UsuarioModelo();
+            //populando o objeto usuário modelo
+            usmodelo.nome = txt_nome.Text;
+            usmodelo.senha = txt_senha.Text;
+            usmodelo.id = codigo;
+            if (uscontroller.Editar(usmodelo))
+                MessageBox.Show("Usuário atualizado com sucesso");
+            else
+                MessageBox.Show("Erro ao atualizar usuário");
+        }
+
+        private void btnListarUsuario_Click(object sender, EventArgs e)
+        {
+            //instancio o novo formulario
+            FrmListarUsuario frmListar = new FrmListarUsuario();
+            frmListar.ShowDialog();//mostro o formulario listar
         }
     }
 }

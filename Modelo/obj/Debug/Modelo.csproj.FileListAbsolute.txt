@@ -4,3 +4,9 @@ D:\desenvolvimentoAPP\des-sist\Modelo\obj\Debug\Modelo.csproj.AssemblyReference.
 D:\desenvolvimentoAPP\des-sist\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
 D:\desenvolvimentoAPP\des-sist\Modelo\obj\Debug\Modelo.dll
 D:\desenvolvimentoAPP\des-sist\Modelo\obj\Debug\Modelo.pdb
+E:\Testando\Modelo\bin\Debug\Modelo.dll
+E:\Testando\Modelo\bin\Debug\Modelo.pdb
+E:\Testando\Modelo\obj\Debug\Modelo.csproj.AssemblyReference.cache
+E:\Testando\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+E:\Testando\Modelo\obj\Debug\Modelo.dll
+E:\Testando\Modelo\obj\Debug\Modelo.pdb

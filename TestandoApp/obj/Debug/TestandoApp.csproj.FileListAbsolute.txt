@@ -95,3 +95,4 @@ E:\Testando\TestandoApp\obj\Debug\TestandoApp.csproj.CopyComplete
 E:\Testando\TestandoApp\obj\Debug\TestandoApp.exe
 E:\Testando\TestandoApp\obj\Debug\TestandoApp.pdb
 E:\Testando\TestandoApp\obj\Debug\TestandoApp.FrmListarUsuario.resources
+E:\Testando\TestandoApp\obj\Debug\TestandoApp.FrmPrincipal.resources
